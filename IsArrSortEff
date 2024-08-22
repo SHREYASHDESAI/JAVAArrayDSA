@@ -1,0 +1,45 @@
+package ArrayProblems;
+
+import java.util.Scanner;
+
+public class IsArrSortEff {
+    public static boolean isSortArrayEff(int[] arr) {
+        for (int i = 0; i < arr.length-1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /* OR
+    public static boolean isSortArrayEff(int[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[i - 1]) {
+                return false;
+            }
+        }
+        return true;
+    }*/
+
+    public static void main(String[] args) {
+
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("Enter no. of Elements in the Arrays:");
+        int n = s.nextInt();
+        int[] a = new int[n];
+
+        int i;
+
+        System.out.println("Enter Elements of Array:");
+        for (i = 0; i < a.length; i++) {
+            a[i] = s.nextInt();
+        }
+
+        System.out.println("The Array is Sorted: " + isSortArrayEff(a));
+
+
+    }
+}
+
